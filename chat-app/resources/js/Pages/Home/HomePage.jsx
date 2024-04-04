@@ -10,7 +10,7 @@ const navigation = [
     { name: "Chi siamo", href: "#" },
 ];
 
-export default function HomePage() {
+export default function HomePage({user}) {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     return (
@@ -62,19 +62,30 @@ export default function HomePage() {
                             ))}
                         </div>
                         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+                        {user ? (
+                        <Link
+                            href={route('dashboard')}
+                            className="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
+                        >
+                            Dashboard
+                        </Link>
+                    ) : (
+                        <>
                             <Link
-                                href={route("login")}
-                                className="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
+                                href={route('login')}
+                                className="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
                             >
-                                Accedi
+                                Log in
                             </Link>
 
                             <Link
-                                href={route("register")}
-                                className="ms-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
+                                href={route('register')}
+                                className="ms-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
                             >
-                               Registrati
+                                Register
                             </Link>
+                        </>
+                    )}
                         </div>
                     </nav>
                     <Dialog
@@ -158,7 +169,7 @@ export default function HomePage() {
                             </p>
                             <div className="mt-10 flex items-center justify-center gap-x-6">
                                 <a
-                                    href="#"
+                                    href="/chatify"
                                     className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                                 >
                                     Chatta ora
