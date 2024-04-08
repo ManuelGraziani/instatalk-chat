@@ -4,6 +4,8 @@ import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Head, Link } from "@inertiajs/react";
 import Image from "./Assets/pexels-andrea-piacquadio-920382.jpg";
+import Feature from "./Components/Feature";
+import { Footer } from "@/Components/Footer";
 
 const navigation = [
     { name: "Funzioni", href: "#" },
@@ -63,26 +65,26 @@ export default function HomePage({user}) {
                         </div>
                         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
                         {user ? (
-                        <Link
-                            href={route('dashboard')}
-                            className="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
+                        <a
+                            href={route('chatify')}
+                            className="font-semibold text-gray-900"
                         >
-                            Dashboard
-                        </Link>
+                            Chat
+                        </a>
                     ) : (
                         <>
                             <Link
                                 href={route('login')}
-                                className="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
+                                className="font-semibold text-gray-900   "
                             >
-                                Log in
+                                Accedi
                             </Link>
 
                             <Link
                                 href={route('register')}
-                                className="ms-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
+                                className="ms-4 font-semibold text-gray-900 hover:text-gray-900"
                             >
-                                Register
+                                Registrati
                             </Link>
                         </>
                     )}
@@ -140,14 +142,14 @@ export default function HomePage({user}) {
                                     <div className="py-6">
                                         <Link
                                             href={route("login")}
-                                            className="font-semibold text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
+                                            className="font-semibold text-gray-900 "
                                         >
                                             Accedi
                                         </Link>
 
                                         <Link
                                             href={route("register")}
-                                            className="ms-4 font-semibold text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
+                                            className="ms-4 font-semibold text-gray-900 "
                                         >
                                             Registrati
                                         </Link>
@@ -159,7 +161,7 @@ export default function HomePage({user}) {
                 </header>
 
                 <div className="relative isolate px-6 pt-14 lg:pt-0 lg:px-8 lg:space-x-6">
-                    <div className="mx-auto max-w-4xl sm:py-48 lg:py-56 my-10 flex flex-col sm:flex-row items-center justify-between">
+                    <div className="mx-auto max-w-4xl sm:pt-36 lg:pt-46 my-10 flex flex-col sm:flex-row items-center justify-between">
                         <div className="text-center sm:w-full lg:w-2/3  lg:me-9"> 
                             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
                                 Connettiti, comunica, instaura connessioni significative
@@ -181,7 +183,9 @@ export default function HomePage({user}) {
                         </div>
                     </div>
                 </div>
+                <Feature />
             </div>
+            <Footer />
         </>
     );
 }

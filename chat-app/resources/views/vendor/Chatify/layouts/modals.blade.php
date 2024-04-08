@@ -8,11 +8,11 @@
   <div class="app-modal" data-name="delete">
       <div class="app-modal-container">
           <div class="app-modal-card" data-name="delete" data-modal='0'>
-              <div class="app-modal-header">Are you sure you want to delete this?</div>
-              <div class="app-modal-body">You can not undo this action</div>
+              <div class="app-modal-header">Sei sicuro di volerlo eliminare?</div>
+              <div class="app-modal-body">Non è possibile annullare questa azione</div>
               <div class="app-modal-footer">
-                  <a href="javascript:void(0)" class="app-btn cancel">Cancel</a>
-                  <a href="javascript:void(0)" class="app-btn a-btn-danger delete">Delete</a>
+                  <a href="javascript:void(0)" class="app-btn cancel">Annulla</a>
+                  <a href="javascript:void(0)" class="app-btn a-btn-danger delete">Elimina</a>
               </div>
           </div>
       </div>
@@ -24,7 +24,7 @@
               <div class="app-modal-header"></div>
               <div class="app-modal-body"></div>
               <div class="app-modal-footer">
-                  <a href="javascript:void(0)" class="app-btn cancel">Cancel</a>
+                  <a href="javascript:void(0)" class="app-btn cancel">Annulla</a>
               </div>
           </div>
       </div>
@@ -35,7 +35,7 @@
           <div class="app-modal-card" data-name="settings" data-modal='0'>
               <form id="update-settings" action="{{ route('avatar.update') }}" enctype="multipart/form-data" method="POST">
                   @csrf
-                  {{-- <div class="app-modal-header">Update your profile settings</div> --}}
+                  {{-- <div class="app-modal-header">Aggiorna le impostazioni del tuo profilo</div> --}}
                   <div class="app-modal-body">
                       {{-- Udate profile avatar --}}
                       <div class="avatar av-l upload-avatar-preview chatify-d-flex"
@@ -43,7 +43,7 @@
                       ></div>
                       <p class="upload-avatar-details"></p>
                       <label class="app-btn a-btn-primary update" style="background-color:{{$messengerColor}}">
-                          Upload New
+                          Nuova Foto
                           <input class="upload-avatar chatify-d-none" accept="image/*" name="avatar" type="file" />
                       </label>
                       {{-- Dark/Light Mode  --}}
@@ -64,8 +64,8 @@
                       </div>
                   </div>
                   <div class="app-modal-footer">
-                      <a href="javascript:void(0)" class="app-btn cancel">Cancel</a>
-                      <input type="submit" class="app-btn a-btn-success update" value="Save Changes" />
+                      <a href="javascript:void(0)" class="app-btn cancel">Annulla</a>
+                      <input type="submit" class="app-btn a-btn-success update" value="Salva modifiche" />
                   </div>
               </form>
           </div>
