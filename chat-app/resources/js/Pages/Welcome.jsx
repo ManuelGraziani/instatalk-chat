@@ -37,7 +37,7 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                         <svg
                             viewBox="0 0 62 65"
                             fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
+                            xmlns="https://www.w3.org/2000/svg"
                             className="h-16 w-auto bg-gray-100 dark:bg-gray-900"
                         >
                             <path
