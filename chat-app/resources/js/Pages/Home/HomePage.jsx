@@ -186,7 +186,6 @@ export default function HomePage({user}) {
                 <Feature />
             </div>
             <Footer />
-            ciao
         </>
     );
 }
