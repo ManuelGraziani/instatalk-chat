@@ -73,19 +73,19 @@ export default function HomePage({user}) {
                         </a>
                     ) : (
                         <>
-                            <Link
-                                href={route('login')}
+                            <a
+                                href={route('chatify')}
                                 className="font-semibold text-gray-900   "
                             >
                                 Accedi
-                            </Link>
+                            </a>
 
-                            <Link
+                            <a
                                 href={route('register')}
                                 className="ms-4 font-semibold text-gray-900 hover:text-gray-900"
                             >
                                 Registrati
-                            </Link>
+                            </a>
                         </>
                     )}
                         </div>
@@ -140,19 +140,19 @@ export default function HomePage({user}) {
                                         ))}
                                     </div>
                                     <div className="py-6">
-                                        <Link
-                                            href={route("login")}
+                                        <a
+                                            href={route("chatify")}
                                             className="font-semibold text-gray-900 "
                                         >
                                             Accedi
-                                        </Link>
+                                        </a>
 
-                                        <Link
+                                        <a
                                             href={route("register")}
                                             className="ms-4 font-semibold text-gray-900 "
                                         >
                                             Registrati
-                                        </Link>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
