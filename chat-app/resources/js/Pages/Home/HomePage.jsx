@@ -66,7 +66,7 @@ export default function HomePage({user}) {
                         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
                         {user ? (
                         <a
-                            href={route('chatify')}
+                            href="/chat"
                             className="font-semibold text-gray-900"
                         >
                             Chat
@@ -74,7 +74,7 @@ export default function HomePage({user}) {
                     ) : (
                         <>
                             <a
-                                href={route('chatify')}
+                                href="/chat"
                                 className="font-semibold text-gray-900   "
                             >
                                 Accedi
@@ -141,7 +141,7 @@ export default function HomePage({user}) {
                                     </div>
                                     <div className="py-6">
                                         <a
-                                            href={route("chatify")}
+                                            href="/chat"
                                             className="font-semibold text-gray-900 "
                                         >
                                             Accedi
