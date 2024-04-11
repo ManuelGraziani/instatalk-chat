@@ -19,5 +19,8 @@ export default withMT({
         },
     },
 
-    plugins: [forms],
+    plugins: [
+        forms,
+        require("tailwindcss-animate")
+    ],
 });

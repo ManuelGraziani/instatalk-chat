@@ -1,0 +1,79 @@
+#fly.toml app configuration auto-generated on 2024-04-11 13:23:06
+#
+#See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+app = "instatalk"
+kill_signal = "SIGINT"
+kill_timeout = 5
+primary_region = "cdg"
+
+[processes]
+app = ""
+
+[build]
+
+[build.args]
+NODE_VERSION = "18"
+PHP_VERSION = "8.2"
+
+[env]
+APP_ENV = "production"
+APP_URL = "https://instatalk.fly.dev"
+APP_DEBUG = true
+LOG_CHANNEL = "stack"
+LOG_LEVEL = "debug"
+LOG_DEPRECATIONS_CHANNEL = "null"
+LOG_STDERR_FORMATTER = "Monolog\\Formatter\\JsonFormatter"
+SESSION_DRIVER = "cookie"
+SESSION_SECURE_COOKIE = true
+DB_CONNECTION = "mysql"
+DB_HOST = "capstone.cdeky46ge3ka.eu-west-3.rds.amazonaws.com"
+DB_DATABASE = "capstone"
+BROADCAST_DRIVER = "log"
+CACHE_DRIVER = "file"
+FILESYSTEM_DISK = "local"
+QUEUE_CONNECTION = "sync"
+SESSION_LIFETIME = "120"
+PUSHER_APP_ID = "1778923"
+PUSHER_APP_KEY = "b9e8948bf2ea15da3b5e"
+PUSHER_APP_SECRET = "ceccdbe8e9b411a05682"
+PUSHER_HOST = " "
+PUSHER_PORT = "443"
+PUSHER_SCHEME = "https"
+PUSHER_APP_CLUSTER = "eu"
+VITE_APP_NAME = "${APP_NAME}"
+VITE_PUSHER_APP_KEY = "${PUSHER_APP_KEY}"
+VITE_PUSHER_HOST = "${PUSHER_HOST}"
+VITE_PUSHER_PORT = "${PUSHER_PORT}"
+VITE_PUSHER_SCHEME = "${PUSHER_SCHEME}"
+VITE_PUSHER_APP_CLUSTER = "${PUSHER_APP_CLUSTER}"
+
+[experimental]
+auto_rollback = true
+
+[[services]]
+http_checks = []
+internal_port = 8080
+processes = ["app"]
+protocol = "tcp"
+script_checks = []
+
+[services.concurrency]
+hard_limit = 25
+soft_limit = 20
+type = "connections"
+
+[[services.ports]]
+force_https = true
+handlers = ["http"]
+port = 80
+
+[[services.ports]]
+handlers = ["tls", "http"]
+port = 443
+
+[[services.tcp_checks]]
+grace_period = "1s"
+interval = "15s"
+restart_limit = 0
+timeout = "2s"
