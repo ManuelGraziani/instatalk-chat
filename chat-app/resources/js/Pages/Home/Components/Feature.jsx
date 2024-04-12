@@ -1,11 +1,11 @@
-import { ArrowPathIcon, CloudArrowUpIcon, FingerPrintIcon, LockClosedIcon } from '@heroicons/react/24/outline'
+import {ChatBubbleBottomCenterTextIcon ,ArrowPathIcon, CloudArrowUpIcon, FingerPrintIcon, LockClosedIcon } from '@heroicons/react/24/outline'
 
 const features = [
   {
-    name: 'Push to deploy',
+    name: 'Comunicazione istantanea',
     description:
-      'Morbi viverra dui mi arcu sed. Tellus semper adipiscing suspendisse semper morbi. Odio urna massa nunc massa.',
-    icon: CloudArrowUpIcon,
+      'Messaggistica istantanea con amici e familiari in qualsiasi momento e da qualsiasi luogo.',
+    icon: ChatBubbleBottomCenterTextIcon,
   },
   {
     name: 'SSL certificates',
@@ -20,9 +20,9 @@ const features = [
     icon: ArrowPathIcon,
   },
   {
-    name: 'Advanced security',
+    name: 'Privacy al primo posto',
     description:
-      'Arcu egestas dolor vel iaculis in ipsum mauris. Tincidunt mattis aliquet hac quis. Id hac maecenas ac donec pharetra eget.',
+      'Le tue chat in InstaTalk sono al sicuro grazie alla crittografia end-to-end',
     icon: FingerPrintIcon,
   },
 ]
@@ -34,7 +34,7 @@ export default function Feature() {
         <div className="mx-auto max-w-2xl lg:text-center">
           <h2 className="text-base font-semibold leading-7 text-indigo-600">Deploy faster</h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Everything you need to deploy your app
+            Funzioni
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-600">
             Quis tellus eget adipiscing convallis sit sit eget aliquet quis. Suspendisse eget egestas a elementum

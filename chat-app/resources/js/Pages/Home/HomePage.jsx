@@ -12,7 +12,7 @@ const navigation = [
     { name: "Chi siamo", href: "#" },
 ];
 
-export default function HomePage({user}) {
+export default function HomePage({ user }) {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     return (
@@ -57,37 +57,45 @@ export default function HomePage({user}) {
                                 <a
                                     key={item.name}
                                     href={item.href}
-                                    className="text-sm font-semibold leading-6 text-gray-900"
+                                    className="text-sm font-semibold leading-6 text-gray-900 hover:text-blue-500"
                                 >
                                     {item.name}
                                 </a>
                             ))}
                         </div>
                         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-                        {user ? (
-                        <a
-                            href="/chat"
-                            className="font-semibold text-gray-900"
-                        >
-                            Chat
-                        </a>
-                    ) : (
-                        <>
-                            <a
-                                href="/chat"
-                                className="font-semibold text-gray-900   "
-                            >
-                                Accedi
-                            </a>
+                            {user ? (
+                                <>
+                                    <a
+                                        href="/chat"
+                                        className="font-semibold text-gray-900 hover:text-blue-500"
+                                    >
+                                        Chat
+                                    </a>
+                                    <Link
+                                        href="/dashboard"
+                                        className="ms-4 font-semibold text-gray-900 hover:text-blue-500"
+                                    >
+                                        Dashboard
+                                    </Link>
+                                </>
+                            ) : (
+                                <>
+                                    <a
+                                        href="/chat"
+                                        className="font-semibold text-gray-900 hover:text-blue-500"
+                                    >
+                                        Accedi
+                                    </a>
 
-                            <a
-                                href={route('register')}
-                                className="ms-4 font-semibold text-gray-900 hover:text-gray-900"
-                            >
-                                Registrati
-                            </a>
-                        </>
-                    )}
+                                    <a
+                                        href={route("register")}
+                                        className="ms-4 font-semibold text-gray-900  hover:text-blue-500"
+                                    >
+                                        Registrati
+                                    </a>
+                                </>
+                            )}
                         </div>
                     </nav>
                     <Dialog
@@ -140,19 +148,38 @@ export default function HomePage({user}) {
                                         ))}
                                     </div>
                                     <div className="py-6">
-                                        <a
-                                            href="/chat"
-                                            className="font-semibold text-gray-900 "
-                                        >
-                                            Accedi
-                                        </a>
+                                        {user ? (
+                                            <>
+                                                <a
+                                                    href="/chat"
+                                                    className="font-semibold text-gray-900"
+                                                >
+                                                    Chat
+                                                </a>
+                                                <Link
+                                                    href="/dashboard"
+                                                    className="ms-4 font-semibold text-gray-900"
+                                                >
+                                                    Dashboard
+                                                </Link>
+                                            </>
+                                        ) : (
+                                            <>
+                                                <a
+                                                    href="/chat"
+                                                    className="font-semibold text-gray-900   "
+                                                >
+                                                    Accedi
+                                                </a>
 
-                                        <a
-                                            href={route("register")}
-                                            className="ms-4 font-semibold text-gray-900 "
-                                        >
-                                            Registrati
-                                        </a>
+                                                <a
+                                                    href={route("register")}
+                                                    className="ms-4 font-semibold text-gray-900 hover:text-gray-900"
+                                                >
+                                                    Registrati
+                                                </a>
+                                            </>
+                                        )}
                                     </div>
                                 </div>
                             </div>
@@ -162,12 +189,14 @@ export default function HomePage({user}) {
 
                 <div className="relative isolate px-6 pt-14 lg:pt-0 lg:px-8 lg:space-x-6">
                     <div className="mx-auto max-w-4xl sm:pt-36 lg:pt-46 my-10 flex flex-col sm:flex-row items-center justify-between">
-                        <div className="text-center sm:w-full lg:w-2/3  lg:me-9"> 
+                        <div className="text-center sm:w-full lg:w-2/3  lg:me-9">
                             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-                                Connettiti, comunica, instaura connessioni significative
+                                Connettiti, comunica, instaura connessioni
+                                significative
                             </h1>
                             <p className="mt-6 text-lg leading-8 text-gray-600">
-                                Unisciti ora e scopri il potere della comunicazione istantanea con InstaTalk
+                                Unisciti ora e scopri il potere della
+                                comunicazione istantanea con InstaTalk
                             </p>
                             <div className="mt-10 flex items-center justify-center gap-x-6">
                                 <a
@@ -178,8 +207,15 @@ export default function HomePage({user}) {
                                 </a>
                             </div>
                         </div>
-                        <div className="w-full lg:w-2/7 rounded-lg overflow-hidden lg:mt-0  lg:ms-8"> {/* Aggiornato lg:w-1/3 */}
-                            <img src={Image} alt="" className="w-full h-full object-cover mt-6 lg:mt-0" /> {/* Aggiunto mt-6 e lg:mt-0 */}
+                        <div className="w-full lg:w-2/7 rounded-lg overflow-hidden lg:mt-0  lg:ms-8">
+                            {" "}
+                            {/* Aggiornato lg:w-1/3 */}
+                            <img
+                                src={Image}
+                                alt=""
+                                className="w-full h-full object-cover mt-6 lg:mt-0"
+                            />{" "}
+                            {/* Aggiunto mt-6 e lg:mt-0 */}
                         </div>
                     </div>
                 </div>

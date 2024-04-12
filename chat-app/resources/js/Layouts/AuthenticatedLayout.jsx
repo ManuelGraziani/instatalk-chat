@@ -24,6 +24,9 @@ export default function Authenticated({ user, header, children }) {
                                 <NavLink href={route('dashboard')} active={route().current('dashboard')}>
                                     Dashboard
                                 </NavLink>
+                                <a className='inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium leading-5 transition duration-150 ease-in-out focus:outline-none text-gray-900 focus:border-indigo-700 ' href={route('chat')} active={route().current('chat')}>
+                                    Chat
+                                </a>
                             </div>
                         </div>
 
