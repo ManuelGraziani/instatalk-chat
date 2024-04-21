@@ -8,7 +8,7 @@ import Feature from "./Components/Feature";
 import { Footer } from "@/Components/Footer";
 
 const navigation = [
-    { name: "Funzioni", href: "#" },
+    { name: "Funzioni", href: "#functions" },
     { name: "Chi siamo", href: "#" },
 ];
 
