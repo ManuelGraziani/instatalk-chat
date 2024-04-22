@@ -1,23 +1,20 @@
 import React from "react";
-import { useState } from "react";
+import { Head, Link } from "@inertiajs/react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import { Head, Link } from "@inertiajs/react";
-import Image from "./Assets/pexels-andrea-piacquadio-920382.jpg";
-import Feature from "./Components/Feature";
+import {useState} from "react";
 import { Footer } from "@/Components/Footer";
 
 const navigation = [
-    { name: "Funzioni", href: "#functions" },
+    { name: "Funzioni", href: "/" },
     { name: "Chi siamo", href: "/about" },
 ];
 
-export default function HomePage({ user }) {
+export default function About({user}) {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
     return (
         <>
-            <Head title="Home" />
+            <Head title="Chi siamo" />
             <div className="bg-white">
                 <header className="absolute inset-x-0 top-0 z-50">
                     <nav
@@ -187,39 +184,26 @@ export default function HomePage({ user }) {
                     </Dialog>
                 </header>
 
-                <div className="relative isolate px-6 pt-14 lg:pt-0 lg:px-8 lg:space-x-6">
-                    <div className="mx-auto max-w-4xl sm:pt-36 lg:pt-46 my-10 flex flex-col sm:flex-row items-center justify-between">
-                        <div className="text-center sm:w-full lg:w-2/3  lg:me-9">
-                            <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-                                Connettiti, comunica, instaura connessioni
-                                significative
-                            </h1>
-                            <p className="mt-6 text-lg leading-8 text-gray-600">
-                                Unisciti ora e scopri il potere della
-                                comunicazione istantanea con InstaTalk
-                            </p>
-                            <div className="mt-10 flex items-center justify-center gap-x-6">
-                                <a
-                                    href="/chat"
-                                    className="rounded-md  px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300"
-                                >
-                                    Chatta ora
-                                </a>
-                            </div>
-                        </div>
-                        <div className="w-full lg:w-2/7 rounded-lg overflow-hidden lg:mt-0  lg:ms-8">
-                            {" "}
-                            {/* Aggiornato lg:w-1/3 */}
-                            <img
-                                src={Image}
-                                alt=""
-                                className="w-full h-full object-cover mt-6 lg:mt-0"
-                            />{" "}
-                            {/* Aggiunto mt-6 e lg:mt-0 */}
-                        </div>
-                    </div>
+                <div className="relative isolate px-6 pt-20 lg:px-8 mt-11">
+                    <h1 className="text-xl font-bold tracking-tight text-gray-900 sm:text-3xl">Chi siamo</h1>
+                    <p className="mt-6 text-lg leading-8 text-gray-800">
+                    Benvenuti su InstaTalk, l'app di messaggistica istantanea che mette la comunicazione al centro di tutto. Fondata nel 20XX da un team appassionato di sviluppatori con l'obiettivo di creare un'esperienza di messaggistica intuitiva e sicura per utenti di tutto il mondo, InstaTalk si impegna a rendere la comunicazione online più facile, più veloce e più gratificante che mai.
+                    </p>
                 </div>
-                <Feature />
+
+                <div className="relative isolate px-6 pt-10 lg:px-8 mt-11">
+                    <h1 className="text-xl font-bold tracking-tight text-gray-900 sm:text-3xl">La Nostra Storia</h1>
+                    <p className="mt-6 text-lg leading-8 text-gray-800">
+                    La nostra storia ha inizio con una semplice domanda: come possiamo migliorare il modo in cui le persone comunicano online? Affrontando questa sfida con determinazione e creatività, il team di InstaTalk ha lavorato duramente per sviluppare un'app che rendesse la messaggistica istantanea accessibile a tutti, mantenendo al contempo la sicurezza e la privacy degli utenti al centro del nostro lavoro.
+                    </p>
+                </div>
+
+                <div className="relative isolate px-6 pt-10 pb-20 lg:px-8 mt-11">
+                    <h1 className="text-xl font-bold tracking-tight text-gray-900 sm:text-3xl">La Nostra Missione</h1>
+                    <p className="mt-6 text-lg leading-8 text-gray-800">
+                    La missione di InstaTalk è semplice ma potente: vogliamo rendere la comunicazione online più umana, più autentica e più significativa. Ci impegniamo a fornire agli utenti un ambiente di messaggistica in cui possano connettersi con amici e familiari in modo autentico e senza soluzione di continuità, ovunque si trovino nel mondo.
+                    </p>
+                </div>
             </div>
             <Footer />
         </>

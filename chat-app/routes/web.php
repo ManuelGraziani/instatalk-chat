@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
@@ -27,6 +28,8 @@ Route::get('/', [Controller::class, 'index'])->name('home');
         'phpVersion' => PHP_VERSION,
     ]);
 }); */
+
+Route::get('/about', [AboutController::class, 'index'])->name('about');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
