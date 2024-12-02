@@ -1,0 +1,94 @@
+# fly.toml app configuration file generated for instatalk on 2024-04-15T11:01:15+02:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'instatalk'
+primary_region = 'cdg'
+kill_signal = 'SIGINT'
+kill_timeout = '5s'
+console_command = 'php /var/www/html/artisan tinker'
+
+[experimental]
+  auto_rollback = true
+
+[build]
+  [build.args]
+    NODE_VERSION = '20'
+    PHP_VERSION = '8.2'
+
+[env]
+  APP_NAME = 'InstaTalk'
+  APP_DEBUG = 'true'
+  APP_ENV = 'production'
+  APP_URL = 'https://instatalk.fly.dev'
+  BROADCAST_CONNECTION = 'pusher'
+  BROADCAST_DRIVER = 'log'
+  CACHE_DRIVER = 'file'
+  DB_CONNECTION = 'mysql'
+  DB_DATABASE = 'capstone'
+  DB_HOST = 'capstone.cdeky46ge3ka.eu-west-3.rds.amazonaws.com'
+  DB_PORT = '3306'
+  FILESYSTEM_DISK = 'local'
+  LOG_CHANNEL = 'stack'
+  LOG_DEPRECATIONS_CHANNEL = 'null'
+  LOG_LEVEL = 'info'
+  LOG_STDERR_FORMATTER = 'Monolog\Formatter\JsonFormatter'
+  PUSHER_APP_CLUSTER = 'eu'
+  PUSHER_APP_ID = '1778923'
+  PUSHER_APP_KEY = 'b9e8948bf2ea15da3b5e'
+  PUSHER_APP_SECRET = 'ceccdbe8e9b411a05682'
+  PUSHER_HOST = ' '
+  PUSHER_PORT = '443'
+  PUSHER_SCHEME = 'https'
+  QUEUE_CONNECTION = 'sync'
+  SESSION_DRIVER = 'cookie'
+  SESSION_LIFETIME = '120'
+  SESSION_SECURE_COOKIE = 'true'
+  VITE_APP_NAME = '${APP_NAME}'
+  VITE_PUSHER_APP_CLUSTER = '${PUSHER_APP_CLUSTER}'
+  VITE_PUSHER_APP_KEY = '${PUSHER_APP_KEY}'
+  VITE_PUSHER_HOST = '${PUSHER_HOST}'
+  VITE_PUSHER_PORT = '${PUSHER_PORT}'
+  VITE_PUSHER_SCHEME = '${PUSHER_SCHEME}'
+  REDIS_HOST = '127.0.0.1'
+  REDIS_PASSWORD = 'null'
+  REDIS_PORT = '6379'
+
+[processes]
+  app = ''
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ['app']
+
+[[services]]
+  protocol = 'tcp'
+  internal_port = 8080
+  processes = ['app']
+
+[[services.ports]]
+    port = 80
+    handlers = ['http']
+    force_https = true
+
+[[services.ports]]
+    port = 443
+    handlers = ['tls', 'http']
+
+  [services.concurrency]
+    type = 'connections'
+    hard_limit = 25
+    soft_limit = 20
+
+[[services.tcp_checks]]
+    interval = '15s'
+    timeout = '2s'
+    grace_period = '1s'
+
+[[vm]]
+  size = 'shared-cpu-1x'
