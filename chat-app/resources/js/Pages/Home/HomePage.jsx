@@ -82,7 +82,7 @@ export default function HomePage({ user }) {
                             ) : (
                                 <>
                                     <a
-                                        href="/chat"
+                                        href={route("dashboard")}
                                         className="font-semibold text-gray-900 hover:text-blue-500"
                                     >
                                         Accedi
